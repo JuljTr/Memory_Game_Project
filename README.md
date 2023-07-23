@@ -10,6 +10,7 @@ Game Project.
 * [Contributing](#contributing)
 * [Resources Used](#resourcesused)
 * [Author](#Author)
+* [License](#License)
 
 ## Instructions
 
@@ -32,3 +33,7 @@ For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Author 
 - [Juljeta Troka](https://www.linkedin.com/in/juljetatroka/)
+
+# License
+
+This game is under the MIT License.
