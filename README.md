@@ -1,12 +1,10 @@
 # Memory Game Project
 
 This project is part of the Udacity Front-End Web Development Program, the course included the HTML and CSS files as the starter code.
-Created content with JavaScript and worked with Browser Events to built a Web App Memory
-Game Project.
+JavaScript is the primary programming language that was used to built an interactive Web App Memory Game; with Browser Events was added functionality to the game, as every card clicked opens and is matched with the next card. The game is keeping score, has a star point system and at the end of the game the refresh button will render a new game. 
 
 ## Table of Contents
 
-* [Instructions](#instructions)
 * [Contributing](#contributing)
 * [Resources Used](#resourcesused)
 * [Author](#Author)
@@ -26,10 +24,14 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Resources Used
-- [The Modern Javascript Tutorial](https://javascript.info/)
-- [JavaScript Tutorial](https://www.javascripttutorial.net/)
-- [MDN Web Web Docs](https://developer.mozilla.org/en-US/)
-- [Udacity](https://www.udacity.com/)
+- **General searching**
+  - [Google search](https://www.google.com/)
+  - [MDN web docs](https://developer.mozilla.org/en-US/)
+  - [CSS-Tricks](https://css-tricks.com/)
+  - [The Modern Javascript Tutorial](https://javascript.info/)
+  - [JavaScript Tutorial](https://www.javascripttutorial.net/)
+  - [MDN Web Web Docs](https://developer.mozilla.org/en-US/)
+  - [Udacity](https://www.udacity.com/)
 
 ## Author 
 - [Juljeta Troka](https://www.linkedin.com/in/juljetatroka/)
