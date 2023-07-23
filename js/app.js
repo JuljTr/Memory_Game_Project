@@ -2,10 +2,9 @@ const restartBtn = document.querySelector(".restart");
 const deck = document.querySelector(".deck");
 const moves = document.querySelector(".moves");
 const scorePanel = document.querySelector(".score-panel");
-
+const starPoint = document.querySelector(".stars");
+const arr = [...starPoint.children];
 const cards = [];
-let listOpenCards = [];
-let openCards = 0;
 
 /*
  * Create a list that holds all of your cards
@@ -38,9 +37,10 @@ cards[13].firstChild.classList.add("fa-bicycle");
 cards[14].firstChild.classList.add("fa-paper-plane-o");
 cards[15].firstChild.classList.add("fa-cube");
 
-let firstChild = scorePanel.firstChild;
+const firstChild = scorePanel.firstChild;
 const scoreDiv = document.createElement("div");
-scoreDiv.textContent = "Score:  ";
+const elementZero = "0";
+scoreDiv.textContent = "Score:  " + elementZero;
 scoreDiv.setAttribute("class", "score-number");
 scorePanel.insertBefore(scoreDiv, firstChild);
 
@@ -103,6 +103,10 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+let listOpenCards = [];
+let openCards = 0;
+let closedCard = 0;
+
 function matchCard(card) {
     card.classList.remove("open");
     card.classList.remove("show");
@@ -119,7 +123,6 @@ function checkForMatch() {
     if (listOpenCards.length === 2) {
         const iconOne = listOpenCards[0].firstChild;
         const iconTwo = listOpenCards[1].firstChild;
-        //console.log(iconOne.classList.value, iconTwo.classList.value)
         if (iconOne.classList.value === iconTwo.classList.value) {
             matchCard(iconOne.parentElement);
             matchCard(iconTwo.parentElement);
@@ -134,6 +137,20 @@ function checkForMatch() {
                 closeCard(iconOne.parentElement);
                 closeCard(iconTwo.parentElement);
             }, 500);
+            closedCard += 2;
+            if (closedCard === 8) {
+                const lastElement = arr[arr.length - 1];
+                lastElement.innerHTML = `<i class="fa fa-star-o"></i>`;
+                arr.pop();
+
+                if (arr.length === 0) {
+                    setTimeout(() => {
+                        alert("You Lost!");
+                        location.reload();
+                    }, 500);
+                }
+                closedCard = 0;
+            }
         }
         listOpenCards = [];
     }
@@ -148,9 +165,10 @@ cards.forEach((card) => {
             listOpenCards.push(card);
             checkForMatch();
         }
-        //Add score Number 
         scoreValue += 1;
-        scoreSpan.textContent = scoreValue;
+        if (scoreValue !== 0) {
+            scoreDiv.textContent = `Score: ${scoreValue} `;
+        }
     })
 })
 
